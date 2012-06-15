@@ -1,0 +1,29 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>Notification</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="out.css" />
+    <style>
+      a {
+        text-decoration: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <title>Notification</title>
+    <script src="out.js"></script>
+    <script>
+      var notify = require('notification');
+    </script>
+    <a href="#" onclick="notify('hello')">notify('hello')</a>
+    <a href="#" onclick="notify('title', 'msg')">notify('title', 'msg')</a>
+    <a href="#" onclick="notify.warn('hello')">notify.warn('hello')</a>
+    <a href="#" onclick="notify.error('hello')">notify.error('hello')</a>
+    <a href="#" onclick="notify('msg').sticky()">notify('msg).sticky()</a>
+    <a href="#" onclick="notify('msg').effect('slide')">notify('msg).effect('slide')</a>
+    <a href="#" onclick="notify('msg').effect('fade')">notify('msg).effect('fade')</a>
+    <a href="#" onclick="notify('msg').effect('scale')">notify('msg).effect('scale')</a>
+  </body>
+</html>

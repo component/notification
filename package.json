@@ -1,0 +1,19 @@
+{
+  "name": "notification-component",
+  "description": "Notification component for the client (growl-like)",
+  "version": "0.0.1",
+  "keywords": ["notification", "component", "ui"],
+  "dependencies": {
+    "emitter-component": "*",
+    "jquery-component": "*"
+  },
+  "component": {
+    "styles": ["notification.css"],
+    "scripts": {
+      "notification": "notification.js"
+    },
+    "templates": {
+      "notification": "notification.html"
+    }
+  }
+}
