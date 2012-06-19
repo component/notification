@@ -1,7 +1,7 @@
 {
   "name": "notification-component",
   "description": "Notification component for the client (growl-like)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": ["notification", "component", "ui"],
   "dependencies": {
     "emitter-component": "*",
