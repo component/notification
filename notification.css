@@ -23,7 +23,7 @@
   padding: 15px 20px;
 }
 
-.notification h1 {
+.notification .title {
   margin: 0 0 5px 0;
   font-size: 16px;
   font-weight: normal;

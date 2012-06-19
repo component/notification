@@ -120,8 +120,8 @@ Notification.prototype.render = function(options){
     self.emit('click', e);
   });
 
-  el.find('h1').text(title);
-  if (!title) el.find('h1').remove();
+  el.find('.title').text(title);
+  if (!title) el.find('.title').remove();
 
   // message
   if ('string' == typeof msg) {
