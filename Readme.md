@@ -15,6 +15,16 @@
 $ npm install notification-component
 ```
 
+## Features
+
+  - events for composition
+  - structural CSS letting you decide on style
+  - transient notifications
+  - transient closable notifications
+  - sticky (implicitly closable) notifications
+  - notification classes (info, warn, error)
+  - fluent API
+
 ## Events
 
   - `click` the notification is clicked
