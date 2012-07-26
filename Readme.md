@@ -1,7 +1,13 @@
 
 # Notification
 
-  Notification component.
+  Notification component with a clean slate to build off of,
+  style and position them however you like.
+
+  ![js growl component](http://f.cl.ly/items/143P3r3X1E1m0Y0a2E2l/Screen%20Shot%202012-07-26%20at%203.16.11%20PM.png)
+
+  These don't _have_ to look like growl style notifications, use
+  your trusty friend CSS.
 
 ## Installation
 
@@ -62,3 +68,7 @@ $ npm install notification-component
   - `slide`
   - `fade`
   - `scale`
+
+## License
+
+  MIT
