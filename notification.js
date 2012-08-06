@@ -4,7 +4,7 @@
  */
 
 var Emitter = require('emitter')
-  , $ = require('jquery');
+  , o = require('jquery');
 
 /**
  * Notification list.
@@ -20,8 +20,8 @@ exports = module.exports = notify;
 
 // list
 
-$(function(){
-  list = $('<ul id="notifications">');
+o(function(){
+  list = o('<ul id="notifications">');
   list.appendTo('body');
 })
 
@@ -86,7 +86,7 @@ exports.error = type('error');
 function Notification(options) {
   Emitter.call(this);
   options = options || {};
-  this.el = $(render('notification'));
+  this.el = o(render('notification'));
   this.render(options);
   if (Notification.effect) this.effect(Notification.effect);
 };
