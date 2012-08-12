@@ -86,7 +86,7 @@ exports.error = type('error');
 function Notification(options) {
   Emitter.call(this);
   options = options || {};
-  this.el = o(render('notification'));
+  this.el = o(require('./template'));
   this.render(options);
   if (Notification.effect) this.effect(Notification.effect);
 };
