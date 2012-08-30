@@ -94,6 +94,7 @@ function Notification(options) {
   options = options || {};
   this.el = o(require('./template'));
   this.render(options);
+  if (options.classname) this.el.addClass(options.classname);
   if (Notification.effect) this.effect(Notification.effect);
 };
 
