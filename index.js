@@ -72,6 +72,12 @@ exports.warn = type('warn');
 exports.error = type('error');
 
 /**
+ * Expose constructor.
+ */
+
+exports.Notification = Notification;
+
+/**
  * Initialize a new `Notification`.
  *
  * Options:
