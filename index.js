@@ -117,6 +117,7 @@ Notification.prototype.render = function(options){
     , self = this;
 
   el.find('.close').click(function(){
+    self.emit('close');
     self.hide();
     return false;
   });

@@ -27,6 +27,7 @@ $ npm install notification-component
 
 ## Events
 
+  - `close` the notification is closed via the X
   - `click` the notification is clicked
 
 ## API
