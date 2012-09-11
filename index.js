@@ -4,7 +4,8 @@
  */
 
 var Emitter = require('emitter')
-  , o = require('jquery');
+  , domify = require('domify')
+  , classes = require('classes');
 
 /**
  * Notification list.
@@ -19,11 +20,11 @@ var list;
 exports = module.exports = notify;
 
 // list
+document.addEventListener('DOMContentLoaded', function () {
+  list = domify('<ul id="notifications"></ul>');
+  document.querySelector('body').appendChild(list);
+}, false);
 
-o(function(){
-  list = o('<ul id="notifications">');
-  list.appendTo('body');
-})
 
 /**
  * Return a new `Notification` with the given 
@@ -92,9 +93,10 @@ exports.Notification = Notification;
 function Notification(options) {
   Emitter.call(this);
   options = options || {};
-  this.el = o(require('./template'));
+  this.el = domify(require('./template'));
+  this.classes = classes(this.el);
   this.render(options);
-  if (options.classname) this.el.addClass(options.classname);
+  if (options.classname) this.classes.add(options.classname);
   if (Notification.effect) this.effect(Notification.effect);
 };
 
@@ -115,31 +117,33 @@ Notification.prototype.render = function(options){
   var el = this.el
     , title = options.title
     , msg = options.message
-    , self = this;
+    , self = this
+    , titleElement = el.querySelector('.title')
+    , contentElement = el.querySelector('p');
 
-  el.find('.close').click(function(){
+  el.querySelector('.close').addEventListener('click', function(){
     self.emit('close');
     self.hide();
     return false;
-  });
+  }, false);
 
-  el.click(function(e){
+  el.addEventListener('click', function(e){
     e.preventDefault();
     self.emit('click', e);
-  });
+  }, false);
 
-  el.find('.title').text(title);
-  if (!title) el.find('.title').remove();
+  titleElement.textContent = title;
+  if (!title) titleElement.parentNode.removeChild(titleElement);
 
   // message
   if ('string' == typeof msg) {
-    el.find('p').text(msg);
+    contentElement.textContent = msg;
   } else if (msg) {
-    el.find('p').replaceWith(msg.el || msg);
+    contentElement.parentNode.replaceChild(msg.el || msg, contentElement);
   }
 
   setTimeout(function(){
-    el.removeClass('hide');
+    self.classes.remove('hide');
   }, 0);
 };
 
@@ -151,7 +155,7 @@ Notification.prototype.render = function(options){
  */
 
 Notification.prototype.closable = function(){
-  this.el.addClass('closable');
+  this.classes.add('closable');
   return this;
 };
 
@@ -165,7 +169,7 @@ Notification.prototype.closable = function(){
 
 Notification.prototype.effect = function(type){
   this._effect = type;
-  this.el.addClass(type);
+  this.classes.add(type);
   return this;
 };
 
@@ -177,7 +181,7 @@ Notification.prototype.effect = function(type){
  */
 
 Notification.prototype.show = function(){
-  this.el.appendTo(list);
+  list.appendChild(this.el);
   return this;
 };
 
@@ -191,7 +195,7 @@ Notification.prototype.show = function(){
 
 Notification.prototype.type = function(type){
   this._type = type;
-  this.el.addClass(type);
+  this.classes.add(type);
   return this;
 };
 
@@ -229,7 +233,7 @@ Notification.prototype.hide = function(ms){
   }
 
   // hide / remove
-  this.el.addClass('hide');
+  this.classes.add('hide');
   if (this._effect) {
     setTimeout(function(self){
       self.remove();
@@ -249,6 +253,6 @@ Notification.prototype.hide = function(ms){
  */
 
 Notification.prototype.remove = function(){
-  this.el.remove();
+  list.removeChild(this.el);
   return this;
 };
