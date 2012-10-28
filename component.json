@@ -2,11 +2,22 @@
   "name": "notification",
   "description": "Notification component",
   "version": "0.0.3",
-  "keywords": ["notify", "notification", "ui", "growl"],
+  "keywords": [
+    "notify",
+    "notification",
+    "ui",
+    "growl"
+  ],
   "dependencies": {
     "component/emitter": "*",
     "component/jquery": "*"
   },
-  "scripts": ["index.js", "template.js"],
-  "styles": ["notification.css"]
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "notification.css"
+  ],
+  "license": "MIT"
 }
