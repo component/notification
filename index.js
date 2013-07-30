@@ -4,13 +4,7 @@
  */
 
 var Emitter = require('emitter')
-  , o = require('jquery');
-
-/**
- * Notification list.
- */
-
-var list;
+  , dom = require('dom');
 
 /**
  * Expose `notify`.
@@ -20,10 +14,8 @@ exports = module.exports = notify;
 
 // list
 
-o(function(){
-  list = o('<ul id="notifications">');
-  list.appendTo('body');
-})
+var list = dom('<ul id="notifications">');
+list.appendTo(document.body);
 
 /**
  * Return a new `Notification` with the given 
@@ -92,7 +84,7 @@ exports.Notification = Notification;
 function Notification(options) {
   Emitter.call(this);
   options = options || {};
-  this.el = o(require('./template'));
+  this.el = dom(require('./template'));
   this.render(options);
   if (options.classname) this.el.addClass(options.classname);
   if (Notification.effect) this.effect(Notification.effect);
@@ -117,13 +109,13 @@ Notification.prototype.render = function(options){
     , msg = options.message
     , self = this;
 
-  el.find('.close').click(function(){
+  el.find('.close').on('click', function(){
     self.emit('close');
     self.hide();
     return false;
   });
 
-  el.click(function(e){
+  el.on('click', function(e){
     e.preventDefault();
     self.emit('click', e);
   });

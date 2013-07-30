@@ -5,7 +5,7 @@ build: notification.css index.js template.js components
 template.js: template.html
 	@component convert $<
 
-components:
+components: component.json
 	@component install
 
 clean:
