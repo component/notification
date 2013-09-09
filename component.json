@@ -9,7 +9,7 @@
     "growl"
   ],
   "dependencies": {
-    "component/emitter": "1.0.0",
+    "component/emitter": "1.0.1",
     "component/jquery": "*"
   },
   "scripts": [
