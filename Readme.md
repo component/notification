@@ -1,4 +1,3 @@
-
 # Notification
 
   Notification component with a clean slate to build off of,
@@ -65,7 +64,7 @@ $ npm install notification-component
 
 ### Notification#hide()
 
-  Show the notification.
+  Hide the notification.
 
 ### Notification#closable()
 
