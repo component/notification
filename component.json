@@ -9,8 +9,9 @@
     "growl"
   ],
   "dependencies": {
+    "ianstormtaylor/dom": "*",
     "component/emitter": "1.0.1",
-    "component/jquery": "*"
+    "segmentio/on-body": "*"
   },
   "scripts": [
     "index.js",
