@@ -62,7 +62,7 @@ function type(type) {
   return function(title, msg){
     return notify.apply(this, arguments)
       .type(type);
-  }
+  };
 }
 
 /**
@@ -98,7 +98,7 @@ function Notification(options) {
   this.render(options);
   if (options.classname) this.el.addClass(options.classname);
   if (Notification.effect) this.effect(Notification.effect);
-};
+}
 
 /**
  * Inherit from `Emitter.prototype`.
