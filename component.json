@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "component/dom": "1.0.5",
-    "component/emitter": "1.0.1",
+    "component/emitter": "1.2.0",
     "segmentio/on-body": "0.0.1"
   },
   "scripts": [
