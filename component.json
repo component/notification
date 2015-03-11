@@ -1,6 +1,6 @@
 {
   "name": "notification",
-  "description": "Notification component",
+  "description": "Notification component for the client (growl-like)",
   "version": "0.0.5",
   "keywords": [
     "notify",
