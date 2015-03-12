@@ -9,7 +9,7 @@
     "growl"
   ],
   "dependencies": {
-    "component/dom": "1.0.5",
+    "component/dom": "1.0.7",
     "component/emitter": "1.2.0",
     "segmentio/on-body": "0.0.1"
   },
