@@ -1,4 +1,14 @@
 
+0.0.6 / 2015-03-11
+==================
+
+  * re-add the `package.json` file
+  * component: update "dom" to v1.0.7
+  * component: update "emitter" to v1.2.0
+  * component: update "description"
+  * component: Pin deps (#10)
+  * More readable HTML entity for the close button
+
 0.0.4 / 2014-03-17
 ==================
 
