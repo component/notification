@@ -1,0 +1,36 @@
+{
+  "name": "notification",
+  "description": "Notification component for the client (growl-like)",
+  "version": "0.0.5",
+  "keywords": [
+    "notify",
+    "notification",
+    "ui",
+    "growl"
+  ],
+  "dependencies": {
+    "component-emitter": "1.2.0",
+    "component-dom": "1.0.7",
+    "on-body": "0.0.1"
+  },
+  "component": {
+    "styles": [
+      "notification.css"
+    ],
+    "scripts": {
+      "notification": "index.js"
+    },
+    "templates": {
+      "notification": "notification.html"
+    }
+  },
+  "browser": {
+    "dom": "component-dom",
+    "emitter": "component-emitter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/component/notification.git"
+  },
+  "license": "MIT"
+}
