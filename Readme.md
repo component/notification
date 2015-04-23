@@ -62,9 +62,9 @@ $ npm install notification-component
 
   Show the notification.
 
-### Notification#hide()
+### Notification#hide([ms])
 
-  Hide the notification.
+  Hide the notification immediately or wait ms.
 
 ### Notification#closable()
 
