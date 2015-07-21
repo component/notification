@@ -1,4 +1,10 @@
 
+0.0.7 / 2015-07-21
+==================
+
+  * component: update "dom" to v1.0.8
+  * docs: add note about optional ms for `hide()`
+
 0.0.6 / 2015-03-11
 ==================
 
